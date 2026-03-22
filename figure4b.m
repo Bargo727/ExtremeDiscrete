@@ -1,5 +1,5 @@
 % Comet Geometry: Extreme First-Passage Survival Probability
-% Visualizing Theorem 2.1 with Grouped Bar Charts
+% Visualizing Theorem 1 with Grouped Bar Charts
 % -------------------------------------------------------------
 clear; clc; close all;
 
