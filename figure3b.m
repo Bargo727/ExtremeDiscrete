@@ -40,7 +40,7 @@ for i = 1:length(N_smooth)
         % F(k) for Leaky Loop
         F_k = (1 - s^(k+1)) / (1 - s);
         
-        % The exponential approximation from your Theorem
+        % The exponential approximation
         term = exp(-N_curr * p_d * F_k);
         sum_term = sum_term + term;
     end
@@ -100,9 +100,3 @@ title(['Verification of \langle T_N \rangle scaling (d=' num2str(d) ', s=' num2s
 legend({'Simulation (Monte Carlo)', 'Theorem 1 Prediction (Eq 6)'}, 'FontSize', 11);
 grid on;
 
-% Add annotation explaining the regime
-dim = [0.15 0.15 0.3 0.3];
-str = {['As N \rightarrow \infty, \langle T_N \rangle \rightarrow ' num2str(d)], ...
-       'Fast exponential decay predicted', 'by Entropic Penalty condition.'};
-annotation('textbox',dim,'String',str,'FitBoxToText','on',...
-    'BackgroundColor','white', 'FaceAlpha', 0.8);
