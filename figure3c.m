@@ -40,8 +40,6 @@ for i = 1:length(Lambda_list)
     % --- B. Theory ---
     % F(k) for geometric decay is (1 - s_eff^(k+1)) / (1 - s_eff)
     % Since s_eff is very close to 1 (because p_d is small), 
-    % F(k) approximates to linear growth k+1 initially?
-    % Let's use the EXACT formula from your paper Eq (13).
     
     k = 0:200;
     % F_k calculation using the s_eff for this specific point
@@ -67,10 +65,3 @@ title(['Variance in the Rare Event Regime (N=' num2str(N) ')']);
 legend;
 grid on;
 
-% Add annotation
-text(min(Lambda_list), max(var_theory)*0.9, ...
-    {'  Low \lambda: Variance is High', '  (Most particles miss target)'}, ...
-    'FontSize', 10);
-text(max(Lambda_list)*0.1, min(var_theory)+0.1, ...
-    {'High \lambda: Variance \to 0', '(Shortest path is certain)'}, ...
-    'FontSize', 10);
