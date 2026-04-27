@@ -10,7 +10,7 @@ clear; clc; close all;
 % Using the 'Leaky Loop' model with deterministic tail (mu=1)
 % to ensure finite means for all N.
 d = 20;          % Minimum path length (Hard Edge)
-s = 0.9;         % Probability to stay in trap (0.9 = 'sticky')
+s = 0.9;         % Probability to stay in trap 
 
 % Derived Shortest Path Probability
 p_d = 1 - s;     % Probability of immediate exit
@@ -21,15 +21,11 @@ num_trials = 5000; % Monte Carlo iterations per N point
 
 %% 2. THEORETICAL CALCULATION
 % -------------------------------------------------------------------------
-% Formula: <T_N> = d + sum_{k=0}^{inf} exp( -N * p_d * F(k) )
-% For Leaky Loop: p_d*F(k) is simply the cumulative prob P(delay <= k)
-% actually p_d*F(k) = (1-s) * (1-s^(k+1))/(1-s) = 1 - s^(k+1)
 
-% We compute the theory curve for a smooth range of N
 N_smooth = logspace(log10(min(N_list)), log10(max(N_list)), 100);
 theo_mean = zeros(size(N_smooth));
 
-% Summation cutoff (when term becomes negligible)
+% Summation cutoff 
 k_max = 200; 
 
 for i = 1:length(N_smooth)
