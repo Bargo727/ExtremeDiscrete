@@ -1,5 +1,4 @@
-% Verifies the Theorem in the Rare Event Limit (Poisson Regime).
-% We scan Lambda = N * p_d from 0.1 to 10 to see the "transition".
+% Verifies the Theorem 
 
 clear; clc; close all;
 
